@@ -2,7 +2,7 @@
 
 A modern, animated developer portfolio built with **React + JavaScript**, Tailwind CSS, shadcn/ui, and an interactive 3D Spline scene.
 
-This project was converted from a TypeScript + React codebase into plain JavaScript + React, with the language switcher removed (English only) and personal content replaced with placeholders ready for you to fill in.
+This project was converted from a TypeScript + React codebase into plain JavaScript + React
 
 ## Tech Stack
 
@@ -57,29 +57,11 @@ npm run preview
 
 ## 5. Deploy
 
-The `dist/` folder can be deployed to any static host (Vercel, Netlify, GitHub Pages, etc.). A `vercel.json` is already included for Vercel deployments.
+The `dist/` folder can be deployed to any static host (Vercel, Netlify, GitHub Pages, etc.). 
 
-## 6. Customize with your own content
 
-Everything you need to personalize is centralized in a few files:
 
-| What to change | File |
-|---|---|
-| Name, role, bio, skills text | `src/locales/translations.js` |
-| Job history & education | `src/locales/translations.js` → `experience.jobs` / `experience.education` |
-| Featured projects (titles/descriptions) | `src/locales/translations.js` → `projects.items` |
-| Project links, images, tags | `src/components/Projects.jsx` → `projectData` |
-| Your photo | Replace `public/placeholder.svg` reference in `src/components/About.jsx` with your own image file |
-| Resume link | `src/components/Hero.jsx`, `src/components/Footer.jsx` (`links.resume` / resume URL) |
-| Social links (GitHub, LinkedIn, email) | `src/components/Hero.jsx`, `src/components/Footer.jsx` |
-| WhatsApp contact number | `src/components/Navbar.jsx`, `src/components/BottomNav.jsx`, `src/components/Footer.jsx`, `src/components/WhatsAppButton.jsx` (search for `wa.me`) |
-| Page title / meta tags / SEO | `index.html` |
-| Tech stack icons/levels | `src/components/TechStack.jsx` |
-| Colors / theme | `tailwind.config.js`, `src/index.css` |
-
-All placeholder values (`your.email@example.com`, `yourusername`, `Your City, Your Country`, `Project One`, etc.) are easy to find — just search the project for `your` or `Project` to locate every spot to edit.
-
-## 7. Project structure
+## 6. Project structure
 
 ```
 src/
@@ -94,8 +76,4 @@ src/
 └── main.jsx          # Entry point
 ```
 
-## Notes
 
-- The language switcher has been removed — the site is English-only by default.
-- The footer's "source code" link has been removed.
-- All personal placeholder data (name, email, phone, socials, project links, photo, resume) needs to be replaced with your own before publishing.
