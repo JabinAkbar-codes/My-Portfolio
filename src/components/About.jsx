@@ -25,7 +25,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row gap-5 md:gap-10 items-center">
             <div className="w-full md:w-5/12 max-w-[320px] sm:max-w-[380px] md:max-w-[420px] shrink-0 relative group/photo mx-auto md:mx-0">
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E0FA] dark:border-white/5 shadow-[0_12px_30px_rgba(88,28,135,0.15)] transform transition-transform duration-500 group-hover/photo:scale-[1.02]">
-                <img src="/Profile.jpg" alt="Jabin" className="w-full aspect-[3/4] object-cover transition-all duration-700" loading="lazy" decoding="async"/>
+                <img src="/Profile.avif" alt="Jabin" className="w-full aspect-[3/4] object-cover transition-all duration-700" loading="lazy" decoding="async"/>
                 <div className="absolute inset-0 bg-primary/5 mix-blend-overlay pointer-events-none"/>
               </div>
             </div>
