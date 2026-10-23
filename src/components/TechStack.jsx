@@ -115,10 +115,6 @@ const TechStack = () => {
                     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
                 },
                 {
-                    name: "MangoDB",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-                },
-                {
                     name: "Oracle",
                     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg",
                 },
