@@ -1,0 +1,619 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Escalonamento Proporcional para Telas Grandes */
+  html {
+    font-size: 16px;
+  }
+  @media (min-width: 1536px) {
+    html { font-size: 17.5px; } /* Full HD+ */
+  }
+  @media (min-width: 1920px) {
+    html { font-size: 20px; } /* Ultrawide */
+  }
+
+  :root {
+    /* TEMA CLARO NEUTRO */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262 100% 71%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 100% 71%;
+
+    --radius: 0.9rem;
+
+    /* Gradientes tema claro */
+    --gradient-hero: radial-gradient(
+        circle at top,
+        hsl(262 100% 71% / 0.16) 0%,
+        transparent 38%
+      ),
+      linear-gradient(
+        180deg,
+        hsl(270 100% 99%) 0%,
+        hsl(264 100% 98%) 55%,
+        hsl(0 0% 100%) 100%
+      );
+
+    --gradient-card: linear-gradient(
+      180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(264 100% 98%) 100%
+    );
+
+    --gradient-purple: linear-gradient(
+      135deg,
+      hsl(262 100% 71%) 0%,
+      hsl(280 100% 60%) 100%
+    );
+
+    /* Sombras tema claro */
+    --shadow-glow: 0 0 55px hsl(262 100% 71% / 0.14);
+    --shadow-card: 0 16px 45px hsl(270 35% 18% / 0.08);
+    --shadow-soft: 0 10px 30px hsl(270 35% 18% / 0.06);
+    --shadow-hover: 0 18px 40px hsl(262 100% 71% / 0.14);
+  }
+
+  .dark {
+    /* TEMA ESCURO PREMIUM (NEUTRO) */
+    --background: 240 10% 2%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 100% 71%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262 100% 71%;
+
+    /* Gradientes tema escuro */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(262 100% 71% / 0.3) 0%,
+      hsl(280 100% 60% / 0.1) 50%,
+      transparent 100%
+    );
+
+    --gradient-card: linear-gradient(
+      180deg,
+      hsl(260 40% 10%) 0%,
+      hsl(260 40% 6%) 100%
+    );
+
+    --gradient-purple: linear-gradient(
+      135deg,
+      hsl(262 100% 71%) 0%,
+      hsl(280 100% 60%) 100%
+    );
+
+    /* Sombras tema escuro */
+    --shadow-glow: 0 0 60px hsl(262 100% 71% / 0.15);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
+    --shadow-soft: 0 10px 30px hsl(0 0% 0% / 0.25);
+    --shadow-hover: 0 0 24px hsl(262 100% 71% / 0.22);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html:not(.dark) body {
+    background-image: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(264 100% 98%) 100%
+    );
+  }
+
+  html.dark body {
+    background-image: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purple);
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .soft-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .soft-hover:hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+@layer components {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out both;
+  }
+
+  .animate-gentle-bounce {
+    animation: gentle-bounce 3.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  @keyframes gentle-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+
+  .surface-card {
+    @apply bg-white/90 dark:bg-card/20 border border-[#E9E2F8] dark:border-white/10 backdrop-blur-md;
+    box-shadow: var(--shadow-card);
+  }
+
+  .surface-card-hover {
+    @apply transition-all duration-500 hover:-translate-y-1 hover:border-primary/30;
+  }
+
+  .soft-pill {
+    @apply bg-[#F7F4FF] dark:bg-white/5 border border-[#E7DFFC] dark:border-white/10 text-slate-600 dark:text-muted-foreground;
+  }
+
+  .soft-section {
+    background: linear-gradient(180deg, #fcfbff 0%, #f7f4ff 100%);
+  }
+}
+
+/* ─── MOTION TOKENS ───────────────────────────────────────────────────────── */
+:root {
+  /* Easings naturais */
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Durações por nível hierárquico */
+  --dur-micro: 150ms;    /* Nível 1: hover rápido, border, cor */
+  --dur-fast: 220ms;     /* Nível 1: botões, ícones */
+  --dur-card: 350ms;     /* Nível 2: cards, imagens */
+  --dur-section: 600ms;  /* Nível 3: entrada de seção */
+  --dur-hero: 800ms;     /* Nível 3: hero stagger */
+}
+
+/* ─── SCROLL REVEAL UTILITÁRIOS ───────────────────────────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-section) var(--ease-out-cubic),
+              transform var(--dur-section) var(--ease-out-cubic);
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity var(--dur-section) var(--ease-out-cubic),
+              transform var(--dur-section) var(--ease-out-cubic);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity var(--dur-section) var(--ease-out-cubic),
+              transform var(--dur-section) var(--ease-out-cubic);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── CARD SPOTLIGHT ──────────────────────────────────────────────────────── */
+/* Aplica o glow que segue o cursor dentro do card via CSS vars --x / --y */
+.card-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    280px circle at var(--x, 50%) var(--y, 50%),
+    rgba(168, 85, 247, 0.07),
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-card) var(--ease-out-cubic);
+}
+.card-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* ─── MAGNETIC BUTTON BASE ────────────────────────────────────────────────── */
+.magnetic-btn {
+  position: relative;
+  transition: transform var(--dur-fast) var(--ease-spring);
+  will-change: transform;
+}
+
+/* ─── SCROLL PROGRESS ─────────────────────────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 9998;
+  transform-origin: left;
+  background: linear-gradient(90deg, hsl(262 100% 71%), hsl(280 100% 65%));
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+  pointer-events: none;
+}
+
+/* ─── TIMELINE PROGRESSIVA ────────────────────────────────────────────────── */
+.timeline-line-fill {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.8s var(--ease-out-cubic);
+}
+.timeline-line-fill.active {
+  transform: scaleY(1);
+}
+
+.timeline-dot {
+  transform: scale(0.6);
+  opacity: 0.4;
+  transition: transform var(--dur-card) var(--ease-spring),
+              opacity var(--dur-card) var(--ease-out-cubic),
+              box-shadow var(--dur-card) var(--ease-out-cubic);
+}
+.timeline-dot.active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.45);
+}
+
+/* ─── BOTÃO PREMIUM (hover states completos) ──────────────────────────────── */
+.btn-primary-motion {
+  transition: background-color var(--dur-fast) var(--ease-out-cubic),
+              transform var(--dur-fast) var(--ease-spring),
+              box-shadow var(--dur-fast) var(--ease-out-cubic);
+}
+.btn-primary-motion:hover {
+  transform: translateY(-1px);
+}
+.btn-primary-motion:active {
+  transform: scale(0.97) translateY(0);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── SPINNING BORDER (CTA Premium) ──────────────────────────────────────── */
+.spinning-border-container {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 20; /* Fica sobreposto à borda normal */
+}
+
+.spinning-border-mask {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.spinning-border-gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250vw;
+  height: 250vw;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    hsl(262 100% 71% / 0.5) 5%,
+    transparent 15%,
+    transparent 85%,
+    hsl(280 100% 65% / 0.5) 95%,
+    transparent 100%
+  );
+  animation: spinBorder 8s linear infinite;
+}
+
+@keyframes spinBorder {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Scrollbar com suporte ao modo claro/escuro */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary dark:bg-[#09090b];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/70 dark:bg-[#4c1d95] rounded-full;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary dark:bg-[#7c3aed];
+}
+
+/* ── Hero Spline 3D ─────────────────────────────────────────────────────────── */
+.hero-spline-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  /* altura mínima para o iframe ter espaço */
+  min-height: 420px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Skeleton de loading */
+.spline-loading-skeleton {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: hsl(262 30% 8% / 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.spline-loading-orb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(262 100% 71% / 0.3) 0%, transparent 70%);
+  animation: splinePulse 2s ease-in-out infinite;
+}
+
+@keyframes splinePulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.5; }
+  50%       { transform: scale(1.1); opacity: 1; }
+}
+
+/* ── Hero Spline Clean ─────────────────────────────────────────────────────── */
+.spline-scene-root {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.spline-clean-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.spline-clean-container.is-loaded {
+  opacity: 1;
+}
+
+.spline-clean-container iframe {
+  width: 100%;
+  /* Mantemos a altura aumentada para cortar a marca d'água do Spline */
+  height: calc(100% + 50px);
+  border: none;
+  pointer-events: all;
+  margin-top: -2px; 
+}
+
+
+
+
+/* Se por acaso o usuário conseguir clicar, colocamos um texto ou deixamos vazio */
+.spline-button-blocker::after {
+  content: "";
+  display: block;
+}
+
+
+/* Fallback */
+.spline-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spline-fallback-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid hsl(262 100% 71% / 0.3);
+  animation: splineRingPulse 3s ease-in-out infinite;
+}
+
+.spline-fallback-ring       { width: 200px; height: 200px; }
+.spline-fallback-ring-2     { width: 300px; height: 300px; animation-delay: 0.5s; border-color: hsl(262 100% 71% / 0.15); }
+.spline-fallback-ring-3     { width: 400px; height: 400px; animation-delay: 1s;   border-color: hsl(262 100% 71% / 0.07); }
+
+@keyframes splineRingPulse {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(1.05); opacity: 0.5; }
+}
+
+.spline-fallback-label {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: monospace;
+  background: linear-gradient(135deg, hsl(262 100% 71%), hsl(280 100% 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes subtle-shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-0.5px, 0.5px) rotate(-0.2deg); }
+  40% { transform: translate(-0.5px, -0.5px) rotate(0.2deg); }
+  60% { transform: translate(0.5px, 0.5px) rotate(-0.2deg); }
+  80% { transform: translate(0.5px, -0.5px) rotate(0.2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.hover-shake:hover {
+  animation: subtle-shake 0.15s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  /* Oculta a barra de progresso (é decorativa) */
+  #scroll-progress {
+    display: none;
+  }
+
+  /* Revela tudo imediatamente (sem translate) */
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Desativa parallax */
+  [style*="--px-mid"],
+  [style*="--px-main"] {
+    transform: none !important;
+  }
+
+  /* Desativa spinning border */
+  .spinning-border::before {
+    animation: none;
+  }
+}
+
