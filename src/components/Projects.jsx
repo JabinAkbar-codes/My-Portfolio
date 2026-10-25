@@ -6,14 +6,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const projectData = [
     {
-        image: "/Arvelle.png",
-        tags: ["HTML5", "CSS3", "JavaScript (ES6+)", "Bootstrap 5"],
-        github: "https://github.com/JabinAkbar-codes/ARVELLE",
-        live: "https://arvelle.netlify.app/",
-      
+        image: "/Clover.png",
+        tags: ["React", "Django REST Framework", "PostgreSQL", "JWT", "Framer Motion", "Swiper"],
+        github: "https://github.com/JabinAkbar-codes/Clover",
+        live: "https://clover-mocha.vercel.app",
         inDevelopment: true,
-    
     },
+    
     {
         image: "/Nextround.png",
         tags: ["React", "Tailwind CSS", "FastAPI", "Google Gemini API", "WebSockets", "JWT"],
@@ -21,12 +20,15 @@ const projectData = [
         live: "https://nextround-wine.vercel.app/",
         inDevelopment: true,
     },
+    
     {
-        image: "/Clover.png",
-        tags: ["React", "Django REST Framework", "PostgreSQL", "JWT", "Framer Motion", "Swiper"],
-        github: "https://github.com/JabinAkbar-codes/Clover",
-        live: "https://clover-mocha.vercel.app",
+        image: "/Arvelle.png",
+        tags: ["HTML5", "CSS3", "JavaScript (ES6+)", "Bootstrap 5"],
+        github: "https://github.com/JabinAkbar-codes/ARVELLE",
+        live: "https://arvelle.netlify.app/",
+      
         inDevelopment: true,
+    
     },
     {
         image: "/Pulse-chat.png",
