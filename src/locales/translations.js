@@ -93,20 +93,22 @@ export const translations = {
       inDevelopment: "In development",
       items: [
         {
-          title: "ARVELLE – Luxury Women's Fashion Marketplace",
+          title: "CLOVER: Full-Stack Jewellery E-Commerce",
           description:
-            "ARVELLE is An ongoing luxury fashion e-commerce project with curated brand collections, category browsing, product pages, and sale promotions, designed for a refined, responsive shopping experience.",
+            "CLOVER is a full-stack jewellery e-commerce app with a charm builder, wishlist, JWT login and UPI/COD checkout with server-side price validation.Built with React 19, Vite, Django REST Framework, PostgreSQL, JWT, Swiper and Framer Motion, and deployed on Vercel + Render.",
         },
+        
         {
           title: "NextRound: AI-Powered Placement Prep Platform",
           description:
             "NextRound is a full-stack placement-prep platform where Gemini AI generates unlimited MCQs, coding problems, and mock interviews on any topic, with auto-graded code in four languages, live multiplayer quizzes, and a no-signup guest mode.",
         },
         {
-          title: "CLOVER: Full-Stack Jewellery E-Commerce",
+          title: "ARVELLE – Luxury Women's Fashion Marketplace",
           description:
-            "CLOVER is a full-stack jewellery e-commerce app with a charm builder, wishlist, JWT login and UPI/COD checkout with server-side price validation.Built with React 19, Vite, Django REST Framework, PostgreSQL, JWT, Swiper and Framer Motion, and deployed on Vercel + Render.",
+            "ARVELLE is An ongoing luxury fashion e-commerce project with curated brand collections, category browsing, product pages, and sale promotions, designed for a refined, responsive shopping experience.",
         },
+        
         {
           title: "Pulse-Chat",
           description:
